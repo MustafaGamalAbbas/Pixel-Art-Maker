@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>color page</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div id="main" class="page">
+        <div id="content">
+
+            <form id="sizePicker">
+                Grid Width:
+            <input type="number" id="width" value=20 oninput="setWidth()" min="1" value="1"></input>
+                Grid Height:
+
+            <input type="number" id="height" value=20 oninput="setHeight()" min="1" value="1"></input>
+
+            <button type="button" id="submit" onclick="submitForm()">Submit</button>
+        </form>
+        Pick a color
+        <input type="color" id="color" value="#ffffff"></input>
+
+        </div>
+
+        <div>
+            <table id="pixelCanvas" align="center">
+               
+            </table>
+        </div>
+
+
+    </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
