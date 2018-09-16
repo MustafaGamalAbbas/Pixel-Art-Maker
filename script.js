@@ -1,12 +1,7 @@
 
 
 var table = document.getElementById("pixelCanvas");
-/**
- * onload function responsibility is initiate web page
- */
-window.onload = function () {
-    makeGrid(document.getElementById("width").value, document.getElementById("height").value);
-}
+
 /**
  * Create gridview drawn on canvas its dimensions specify through the width and height that passed as a prams 
  * @param {*} width The widht of gridview
@@ -48,36 +43,18 @@ function clearTable() {
  */
 function cellClicked(cell) {
 
-    console.log(cell.parentNode.rowIndex + " " + cell.cellIndex);
-    cell.style.backgroundColor = document.getElementById("color").value;
+    cell.style.backgroundColor = document.getElementById("colorPicker").value;
 }
-/**
- * setting function for width of gridview 
- */
-function setWidth() {
 
-    var width = document.getElementById("width").value !== '' ? document.getElementById("width").value : 0;
-    makeGrid(width, document.getElementById("height").value);
-
-}
 /**
- * setting function for height of gridview 
- */
-function setHeight() {
-
-    var height = document.getElementById("height").value !== '' ? document.getElementById("height").value : 0;
-    makeGrid(document.getElementById("width").value, height);
-}
-/**
- * reset function that reset all view as initiated 
+ * submit function that reset all view as initiated 
  */
 function submitForm() {
 
-    document.getElementById("color").value = '#ffffff';
-    document.getElementById("height").value = 20;
-    document.getElementById("width").value = 20;
-
+    let color = document.getElementById("colorPicker").value;
+    document.getElementById("colorPicker").value = '#ffffff';
     makeGrid(document.getElementById("width").value, document.getElementById("height").value);
+    document.getElementById("colorPicker").value = color;
 }
 
 
